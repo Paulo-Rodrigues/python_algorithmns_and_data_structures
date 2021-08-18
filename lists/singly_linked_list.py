@@ -37,3 +37,11 @@ class SinglyLinkedList:
             prev = curr
             curr = curr.next
         return
+
+    def search(self, data):
+      node = self.head
+      while node is not None:
+          if node.data == data:
+              return node
+          node = node.next
+      return None

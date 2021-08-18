@@ -41,7 +41,17 @@ class SinglyLinkedListTest(unittest.TestCase):
         self.sll.remove_node(self.sll.head)
         self.assertEqual(self.sll.head.data, 2)
         self.assertEqual(self.sll.tail.data, 3)
-        self.assertEqual(self.sll.size, 2) 
+        self.assertEqual(self.sll.size, 2)
+
+    def test_search(self):
+        self.sll.add_node(1)
+        self.sll.add_node(2)
+        self.sll.add_node(3)
+        self.assertEqual(self.sll.search(1).data, 1)
+        self.assertEqual(self.sll.search(2).data, 2)
+        self.assertEqual(self.sll.search(3).data, 3)
+        self.assertEqual(self.sll.search(4), None)
+
 
 if __name__ == '__main__':
     unittest.main()
