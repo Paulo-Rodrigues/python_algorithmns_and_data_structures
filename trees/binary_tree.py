@@ -29,3 +29,24 @@ class BinarySearchTree:
                 return False
             else:
                 return self.right.contains(value)
+
+    def preorder(self):
+        print(self.value)
+        if self.left:
+            self.left.preorder()
+        if self.right:
+            self.right.preorder()
+
+    def postorder(self):
+        if self.left:
+            self.left.postorder()
+        if self.right:
+            self.right.postorder()
+        print(self.value)
+
+    def inorder(self):
+        if self.left:
+            self.left.inorder()
+        print(self.value)
+        if self.right:
+            self.right.inorder()
