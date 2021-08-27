@@ -1,4 +1,5 @@
 import heapq
+import unittest
 
 class PriorityQueue:
     def __init__(self):
@@ -11,3 +12,19 @@ class PriorityQueue:
 
     def pop(self):
         return heapq.heappop(self._queue)[-1]
+
+class PriorityQueueTest(unittest.TestCase):
+    def test_init(self):
+        pq = PriorityQueue()
+        self.assertIsNotNone(pq)
+
+    def test_push(self):
+        pq = PriorityQueue()
+        pq.push('A', 1)
+        self.assertEqual(pq._queue, [(-1, 0, 'A')])
+        pq.push('B', 2)
+        self.assertEqual(pq._queue, [(-2, 1, 'B'), (-1, 0, 'A')])
+
+
+if __name__ == '__main__':
+    unittest.main()
